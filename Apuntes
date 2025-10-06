@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes de Ciberseguridad - Erick</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        } 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background-color: #2d3748;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background-color: #4a5568;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: #63b3ed;
+            color: #1a202c;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+        
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: #63b3ed;
+            border-left: 4px solid #63b3ed;
+            padding-left: 1rem;
+            margin-top: 3rem;
+        }
+        
+        h3 {
+            color: #90cdf4;
+            margin-top: 2.5rem;
+            border-bottom: 1px solid #4a5568;
+            padding-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        strong {
+            color: #faf089;
+            font-weight: 600;
+        }
+        
+        ul {
+            list-style-type: '✓ ';
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #4a5568;
+        }
+        
+        th {
+            background-color: #4a5568;
+            color: #ffffff;
+        }
+        pre {
+            background-color: #1a202c;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #4a5568;
+        }
+        
+        code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.95em;
+            color: #90cdf4;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Apuntes y Conceptos</h1>
+        <nav>
+            <ul>
+                <li><a href="#skills-it">Skills IT</a></li>
+                <li><a href="#suites">Suites Populares</a></li>
+                <li><a href="#sistemas-operativos">Sistemas Operativos</a></li>
+                <li><a href="#terminal-permisos">Terminal y Permisos</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#conceptos-redes">Conceptos de Red</a></li>
+            </ul>
+        </nav>
+        <section id="skills-it">
+            <h2>SKILLS IT</h2>
+            <h3>Componentes de una Computadora</h3>
+            <p>Una computadora está compuesta por varios componentes clave que trabajan juntos:</p>
+            <ul>
+                <li><strong>Placa base (Motherboard):</strong> El circuito principal que conecta todos los componentes.</li>
+                <li><strong>CPU (Procesador):</strong> El cerebro de la computadora que ejecuta instrucciones.</li>
+                <li><strong>RAM (Memoria):</strong> La memoria de trabajo a corto plazo donde se almacenan temporalmente los datos que la CPU necesita acceder rápidamente.</li>
+                <li><strong>GPU (Tarjeta gráfica):</strong> Procesa y genera las imágenes que ves en pantalla. Puede ser discreta o integrada.</li>
+                <li><strong>GPU Discreta:</strong> Tarjeta gráfica independiente con su propia memoria, más potente para gaming y aplicaciones gráficas intensivas.</li>
+                <li><strong>GPU Integrada:</strong> Procesador gráfico incluido en la CPU, más económica pero menos potente.</li>
+                <li><strong>Almacenamiento (SSD/HDD):</strong> Donde se guardan el sistema operativo, los programas y tus archivos permanentemente.</li>
+                <li><strong>Fuente de poder (PSU):</strong> Suministra electricidad a todos los componentes.</li>
+                <li><strong>Gabinete (Case):</strong> La caja que protege y aloja todo.</li>
+            </ul>
+            <h3>Tipos de Conexiones y Funcionalidades</h3>
+            <ul>
+                <li><strong>NFC (Near Field Communication):</strong> Permite la comunicación inalámbrica a muy corta distancia (pocos centímetros), usada para pagos móviles y para emparejar dispositivos rápidamente.</li>
+                <li><strong>WIFI (Estándar 802.11):</strong> Es la tecnología que permite la conexión inalámbrica a internet y redes locales (WLAN). Utiliza ondas de radio para transmitir datos.</li>
+                <li><strong>Bluetooth:</strong> Una tecnología de comunicación inalámbrica de corto alcance diseñada para conectar dispositivos como audífonos, teclados, ratones y altavoces.</li>
+                <li><strong>Intranet:</strong> Es una <strong>red privada</strong> que pertenece a una organización. Utiliza las mismas tecnologías que Internet, pero solo es accesible para los miembros de esa organización.</li>
+            </ul>
+            <h3>Solucionar Problemas de Sistemas Operativos</h3>
+            <p>Para solucionar problemas en sistemas operativos es fundamental entender:</p>
+            <ul>
+                <li>Los procesos y servicios del sistema</li>
+                <li>Los registros de eventos (logs)</li>
+                <li>La administración de usuarios y permisos</li>
+                <li>La configuración de red</li>
+                <li>Los controladores de dispositivos</li>
+                <li>Las herramientas de diagnóstico integradas</li>
+            </ul>
+        </section>
+        <section id="suites">
+            <h2> Suites Populares</h2>
+            <p>Una <strong>Suite de Software</strong> es un conjunto de programas informáticos relacionados que se venden o distribuyen como un solo paquete. Suelen tener una interfaz de usuario similar y están diseñados para trabajar juntos de manera fluida.</p>
+            
+            <h3>Microsoft Office Suite (Ahora Microsoft 365)</h3>
+            <p>Es la suite de productividad más conocida, enfocada en entornos de escritorio y empresariales. Incluye Word, Excel, PowerPoint, Outlook, OneNote, Teams, etc.</p>
+            
+            <h3>Google Suite (Ahora Google Workspace)</h3>
+            <p>Es una suite basada en la nube, enfocada en la colaboración en tiempo real. Incluye Docs, Sheets, Slides, Gmail, Drive, Calendar, etc.</p>
+            
+            <h3>Administración de Cuentas de Dominio</h3>
+            <p>Saber administrar cuentas de dominio implica gestionar usuarios, grupos, políticas de seguridad y permisos en un entorno de red corporativa, generalmente usando Active Directory en Windows Server.</p>
+            
+            <h3>Configuración de Correos y Protocolos</h3>
+            <p>Configurar un cliente de correo (como Outlook) implica usar protocolos específicos:</p>
+            <ul>
+                <li><strong>IMAP (Internet Message Access Protocol):</strong> Sincroniza tu correo con el servidor. Es el más recomendado.</li>
+                <li><strong>POP3 (Post Office Protocol 3):</strong> Descarga los correos del servidor a tu PC, usualmente borrándolos del servidor.</li>
+                <li><strong>SMTP (Simple Mail Transfer Protocol):</strong> Es el protocolo estándar que se usa exclusivamente para <strong>enviar</strong> correos electrónicos.</li>
+            </ul>
+        </section>
+
+        <section id="sistemas-operativos">
+            <h2> Sistemas Operativos</h2>
+            
+            <h3>Instalación y Configuración</h3>
+            <p><strong>Entrar a la BIOS/UEFI:</strong> La BIOS/UEFI es el firmware de la placa base, el primer software que se ejecuta al encender un PC. Para entrar, debes presionar una tecla específica justo al arrancar (comúnmente F2, F10, F12 o DEL).</p>
+            
+            <h3>Instalar un Sistema Operativo Linux</h3>
+            <p>Pasos básicos: crear medio de instalación (USB), configurar BIOS/UEFI para arrancar desde USB, seguir el asistente de instalación, particionar el disco, configurar usuario y contraseña.</p>
+            
+            <h3>Instalar un Sistema Operativo Windows</h3>
+            <p>Similar a Linux: crear medio de instalación, arrancar desde él, seguir el asistente, particionar el disco, configurar usuario y preferencias.</p>
+            
+            <h3>Versiones, Diferencias y Propósitos</h3>
+            <h4>Windows</h4>
+            <ul>
+                <li><strong>Windows Home:</strong> Para usuarios domésticos.</li>
+                <li><strong>Windows Pro:</strong> Para profesionales. Añade funciones como <strong>BitLocker</strong> (cifrado de disco), Escritorio Remoto y Políticas de Grupo.</li>
+                <li><strong>Compatibilidad:</strong> Excelente compatibilidad con software y hardware, especialmente para gaming y aplicaciones comerciales.</li>
+            </ul>
+            
+            <h4>Linux</h4>
+            <ul>
+                <li><strong>Ubuntu/Mint:</strong> Ideales para principiantes. Propósito: Escritorio, desarrollo.</li>
+                <li><strong>CentOS/RHEL/Debian:</strong> Estándar en servidores por su estabilidad. Propósito: Servidores, infraestructura.</li>
+                <li><strong>Arch Linux:</strong> Para usuarios avanzados que quieren construir su sistema desde cero. Propósito: Aprendizaje, personalización.</li>
+                <li><strong>Compatibilidad:</strong> Perfecta para desarrollo y ciberseguridad.</li>
+            </ul>
+        </section>
+
+        <section id="terminal-permisos">
+            <h2> Terminal y Permisos</h2>
+            
+            <h3>Navegar por la Terminal</h3>
+            <p>La terminal es fundamental. Los dos intérpretes de comandos más comunes son <strong>Bash</strong> (Linux/macOS) y <strong>PowerShell</strong> (Windows).</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarea</th>
+                        <th>Comando en Bash (Linux)</th>
+                        <th>Comando en PowerShell (Windows)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="3" style="background-color: #4a5568; color: white;"><strong>Navegación</strong></td></tr>
+                    <tr><td>Listar archivos (detallado)</td><td><code>ls -la</code></td><td><code>Get-ChildItem</code> (alias: <code>ls</code>, <code>dir</code>)</td></tr>
+                    <tr><td>Cambiar de directorio</td><td><code>cd /ruta/directorio</code></td><td><code>Set-Location</code> (alias: <code>cd</code>)</td></tr>
+                    <tr><td>Ir al directorio anterior</td><td><code>cd ..</code></td><td><code>cd ..</code></td></tr>
+                    <tr><td>Mostrar ruta actual</td><td><code>pwd</code></td><td><code>Get-Location</code> (alias: <code>pwd</code>)</td></tr>
+                    
+                    <tr><td colspan="3" style="background-color: #4a5568; color: white;"><strong>Gestión de Archivos y Carpetas</strong></td></tr>
+                    <tr><td>Crear carpeta</td><td><code>mkdir nombre_carpeta</code></td><td><code>New-Item -Type Directory nombre_carpeta</code></td></tr>
+                    <tr><td>Crear archivo vacío</td><td><code>touch nombre_archivo</code></td><td><code>New-Item -Type File nombre_archivo</code></td></tr>
+                    <tr><td>Copiar</td><td><code>cp origen destino</code></td><td><code>Copy-Item origen destino</code></td></tr>
+                    <tr><td>Mover/Renombrar</td><td><code>mv origen destino</code></td><td><code>Move-Item origen destino</code></td></tr>
+                    <tr><td>Borrar archivo</td><td><code>rm archivo</code></td><td><code>Remove-Item archivo</code></td></tr>
+                    <tr><td>Borrar carpeta y contenido</td><td><code>rm -r carpeta</code></td><td><code>Remove-Item -Recurse -Force carpeta</code></td></tr>
+                    
+                    <tr><td colspan="3" style="background-color: #4a5568; color: white;"><strong>Visualización y Utilerías</strong></td></tr>
+                    <tr><td>Ver contenido de archivo</td><td><code>cat archivo</code></td><td><code>Get-Content archivo</code> (alias: <code>cat</code>)</td></tr>
+                    <tr><td>Limpiar la pantalla</td><td><code>clear</code></td><td><code>Clear-Host</code> (alias: <code>cls</code>)</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Permisos y Privilegios en Servidores</h3>
+            <p>Los sistemas operativos utilizan un modelo de privilegios para protegerse.</p>
+            <ul>
+                <li><strong>Linux:</strong> El superusuario es <strong>root</strong>. Los usuarios normales usan el comando <code>sudo</code> para ejecutar tareas con privilegios elevados temporalmente. Los archivos tienen permisos de Lectura (r), Escritura (w) y Ejecución (x) para un Dueño, un Grupo y los Otros.</li>
+                <li><strong>Windows:</strong> El superusuario es el grupo de <strong>Administradores</strong>. Se utiliza el Control de Cuentas de Usuario (UAC) que solicita confirmación antes de realizar tareas importantes. Los permisos se gestionan con Listas de Control de Acceso (ACLs).</li>
+            </ul>
+            
+            <h3>Permisos de Ejecución en PowerShell</h3>
+            <p>PowerShell restringe la ejecución de scripts por seguridad. Es crucial saber cómo gestionarla.</p>
+            <pre><code># Muestra las políticas de ejecución para todos los ámbitos (Scopes)
+Get-ExecutionPolicy -List</code></pre>
+            <p>El <strong>Scope (ámbito)</strong> en <code>Set-ExecutionPolicy</code> determina qué tan permanente es el cambio:</p>
+            <ul>
+                <li><code>-Scope Process</code>: El cambio solo dura para la <strong>ventana actual de la terminal</strong>. Es la opción más segura y temporal.</li>
+                <li><code>-Scope CurrentUser</code>: El cambio es <strong>persistente</strong> para tu usuario y se guarda para futuras sesiones.</li>
+            </ul>
+            <pre><code># Permite ejecutar scripts firmados, solo en esta sesión (Temporal y seguro)
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned</code></pre>
+          
+            <h3>Anillos de Privilegio (Protection Rings)</h3>
+            <p>Los sistemas operativos modernos separan los programas en niveles jerárquicos llamados anillos para proteger el sistema. Un proceso en un anillo de menor número tiene más privilegios.</p>
+            <ul>
+                <li><strong>Anillo 0 (Kernel Mode):</strong> El nivel más privilegiado. Aquí reside el <strong>Kernel</strong>, el núcleo del sistema operativo. Tiene acceso directo y sin restricciones a todo el hardware. Un fallo aquí es catastrófico y causa un "pantallazo azul" o "kernel panic".</li>
+                <li><strong>Anillo 1 y 2 (Driver Mode):</strong> Niveles intermedios. Aquí operan los <strong>controladores de dispositivos (drivers)</strong>. Tienen un acceso privilegiado al hardware, pero más restringido que el kernel. La mayoría de los sistemas operativos modernos no utilizan estos anillos de forma explícita, integrando los drivers en el Anillo 0 o 3.</li>
+                <li><strong>Anillo 3 (User Mode):</strong> El nivel menos privilegiado. Aquí se ejecutan todas tus aplicaciones: navegadores web, juegos, editores de texto, etc. Si una aplicación falla, solo se cierra ella misma sin afectar al resto del sistema operativo. No pueden acceder al hardware directamente; deben solicitarlo al kernel.</li>
+            </ul>
+        </section>
+        <section id="redes">
+            <h2> Redes</h2>    
+            <h3>Modelo OSI vs. TCP/IP</h3>
+            <p><strong>Modelo OSI:</strong> Es un modelo <strong>teórico de 7 capas</strong> creado para estandarizar la comunicación en redes. Es perfecto para aprender y entender cómo viaja la información, pero no es el que se usa en la práctica.</p>
+            <p><strong>Modelo TCP/IP:</strong> Es un modelo <strong>práctico de 4/5 capas</strong> sobre el que está construido todo el internet. Es la implementación real de los conceptos del modelo OSI.</p>
+            
+            <h3>Protocolos Fundamentales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Protocolo</th>
+                        <th>Definición y Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SSH</strong></td>
+                        <td>(Secure Shell) - Protocolo para conectarse de forma segura a la terminal de un servidor remoto.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RDP</strong></td>
+                        <td>(Remote Desktop Protocol) - Permite conectarse a un computador remoto con interfaz gráfica.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FTP</strong></td>
+                        <td>(File Transfer Protocol) - Sirve para subir y descargar archivos, pero no es seguro.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SFTP/FTPS</strong></td>
+                        <td>(Secure FTP) - Versiones seguras del FTP que encriptan la conexión.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HTTP</strong></td>
+                        <td>(Hypertext Transfer Protocol) - Envía información web sin encriptar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HTTPS</strong></td>
+                        <td>(HTTP Secure) - La versión segura de HTTP. Envía información encriptada.</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Puertos Comunes y sus Usos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Puerto</th>
+                        <th>Protocolo</th>
+                        <th>Uso Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>22</strong></td><td>SSH</td><td>Conexión remota segura por línea de comandos.</td></tr>
+                    <tr><td><strong>20, 21</strong></td><td>FTP</td><td>Transferencia de archivos (no segura).</td></tr>
+                    <tr><td><strong>80</strong></td><td>HTTP</td><td>Navegación web sin encriptar.</td></tr>
+                    <tr><td><strong>443</strong></td><td>HTTPS</td><td>Navegación web segura y encriptada.</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Conexiones de Red y Protección de Puertos</h3>
+            <p>Una conexión de red se establece cuando un cliente solicita un servicio a un servidor en un puerto específico. Los puertos son como las puertas de un edificio: algunos deben estar abiertos al público, pero muchos deben estar cerrados y protegidos.</p>
+            <p><strong>Puertos Comúnmente Abiertos:</strong> 80 (HTTP), 443 (HTTPS), 22 (SSH), 53 (DNS), 25 (SMTP).</p>
+            <p><strong>¿Cómo Protegerlos?</strong></p>
+            <ul>
+                <li><strong>Firewall:</strong> Es la primera línea de defensa. Actúa como un guardia de seguridad que permite o bloquea el tráfico según reglas predefinidas. Configúralo para permitir solo las conexiones necesarias.</li>
+                <li><strong>Principio de Menor Privilegio:</strong> No abras un puerto si no es absolutamente necesario. Cierra todo por defecto y abre solo lo indispensable.</li>
+                <li><strong>Hardening de Servicios:</strong> Asegura el software que se ejecuta en los puertos abiertos. Por ejemplo, para SSH (puerto 22), deshabilita el login de root y usa autenticación con llaves en lugar de contraseñas.</li>
+                <li><strong>Monitoreo y Escaneo:</strong> Usa herramientas como Nmap para escanear tus propios puertos y ver qué tienes abierto. Utiliza sistemas de detección de intrusos (IDS) para monitorear el tráfico en busca de actividad sospechosa.</li>
+            </ul>
+            
+            <h3>Almacenamiento en Red: NAS y SAN</h3>
+            <ul>
+                <li><strong>NAS (Network Attached Storage):</strong> Es un dispositivo de almacenamiento conectado a la red que funciona a nivel de <strong>archivos</strong>. Es como tener un disco duro compartido, ideal para centralizar archivos en una casa u oficina pequeña.</li>
+                <li><strong>SAN (Storage Area Network):</strong> Es una red de alta velocidad dedicada al almacenamiento que funciona a nivel de <strong>bloques</strong>. Es de alto rendimiento y se usa en entornos empresariales para bases de datos y virtualización.</li>
+            </ul>
+            
+            <h3>SSL y TLS</h3>
+            <p><strong>SSL (Secure Sockets Layer):</strong> Protocolo original para encriptar. Está obsoleto.</p>
+            <p><strong>TLS (Transport Layer Security):</strong> Es el sucesor moderno y seguro de SSL, usado para HTTPS.</p>
+        </section>
+
+        <section id="conceptos-redes">
+            <h2> Conceptos de Red Específicos</h2>
+            
+            <h3>Subnetting</h3>
+            <p>Es la práctica de dividir una red grande en redes más pequeñas llamadas "subredes". Permite una mejor organización, seguridad y rendimiento de la red.</p>
+            
+            <h3>Terminología IP Clave</h3>
+            <ul>
+                <li><strong>IP Privada vs. IP Pública:</strong> La IP privada es para tu red local interna; la pública es para identificarte en internet.</li>
+                <li><strong>localhost:</strong> Nombre que siempre se refiere a tu propia máquina (<code>127.0.0.1</code>).</li>
+                <li><strong>Dirección de Loopback:</strong> La dirección IP <code>127.0.0.1</code> que siempre apunta al propio dispositivo.</li>
+                <li><strong>Subnetting:</strong> Es la práctica de dividir una red grande en redes más pequeñas llamadas "subredes".</li>
+                <li><strong>Máscara de Subred (Subnet Mask):</strong> Un número (ej. <code>255.255.255.0</code>) que le dice a un dispositivo qué parte de una dirección IP es la red y qué parte es el host.</li>
+                <li><strong>CIDR (Classless Inter-Domain Routing):</strong> Notación moderna para una IP y su máscara de red (ej. <code>192.168.1.0/24</code>).</li>
+                <li><strong>Default Gateway:</strong> La dirección IP de tu router. Es la "puerta de salida" de tu red local.</li>
+            </ul>
+            
+            <h3>Terminología de Red</h3>
+            <ul>
+                <li><strong>VLAN (Virtual LAN):</strong> Permite crear múltiples redes lógicas y aisladas sobre una misma infraestructura física.</li>
+                <li><strong>DMZ (Demilitarized Zone):</strong> Una subred intermedia entre tu red interna e internet para alojar servidores públicos.</li>
+                <li><strong>ARP (Address Resolution Protocol):</strong> Traduce direcciones IP a direcciones MAC en una red local.</li>
+                <li><strong>VM (Virtual Machine):</strong> Máquina virtual, un entorno de sistema operativo emulado.</li>
+                <li><strong>DHCP (Dynamic Host Configuration Protocol):</strong> Asigna automáticamente direcciones IP a los dispositivos.</li>
+                <li><strong>DNS (Domain Name System):</strong> El "directorio de internet" que traduce nombres (<code>google.com</code>) a direcciones IP.</li>
+                <li><strong>NAT (Network Address Translation):</strong> Permite que múltiples dispositivos compartan una única IP pública.</li>
+                <li><strong>IP (Internet Protocol):</strong> Protocolo fundamental para el direccionamiento y enrutamiento de paquetes.</li>
+                <li><strong>Router:</strong> Dispositivo que conecta redes diferentes y opera en la capa 3 del modelo OSI.</li>
+                <li><strong>Switch:</strong> Dispositivo que conecta dispositivos en una misma red y opera en la capa 2 del modelo OSI.</li>
+                <li><strong>VPN (Virtual Private Network):</strong> Crea una conexión segura y encriptada sobre una red pública.</li>
+            </ul>
+            
+            <h3>Tipos de Redes</h3>
+            <ul>
+                <li><strong>LAN (Local Area Network):</strong> Red de área local (una casa, una oficina).</li>
+                <li><strong>WAN (Wide Area Network):</strong> Red de área amplia que conecta redes a través de grandes distancias geográficas (Internet es una WAN).</li>
+                <li><strong>WLAN (Wireless Local Area Network):</strong> Una red local inalámbrica (tu red Wi-Fi).</li>
+                <li><strong>MAN (Metropolitan Area Network):</strong> Una red que cubre un área geográfica como una ciudad.</li>
+            </ul>
+            
+            <h3>Protocolos de Servicios de Red</h3>
+            <ul>
+                <li><strong>DHCP (Dynamic Host Configuration Protocol):</strong> Asigna automáticamente direcciones IP a los dispositivos.</li>
+                <li><strong>DNS (Domain Name System):</strong> Traduce nombres de dominio a direcciones IP.</li>
+                <li><strong>NTP (Network Time Protocol):</strong> Sincroniza la hora entre dispositivos, crucial para auditorías y logs.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
